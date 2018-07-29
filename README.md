@@ -13,24 +13,24 @@ python manage.py migrations
 
 ## Add User API
 http://0.0.0.0:8001/adduser
-'''
+```
 payload={"username":"",
     "password":"",
     "email":""}
-'''
+```
 ## Add Course API
 http://0.0.0.0:8001/addcourse
-'''
+```
 payload={"course_name":""}
-'''
+```
 ## list of all registred USer
 http://0.0.0.0:8001/userlist
 ## List of all Registered courses
 http://0.0.0.0:8001/courselist
 ## User Login API
 http://0.0.0.0:8001/login
-'''
+```
 payload={"username":"",
     "password":"",
      }
-'''
+```
