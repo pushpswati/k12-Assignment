@@ -1,14 +1,15 @@
 # k12-Assignment
 # Installation and setup
+```
 pip install django==1.11.0
- #How TO RUN  Djangosingup
-# How TO RUN  Djangosingup
-python manage.py runserver
- # how to migrate the project
-python manage.py migrate
- # how to migrations the project
+pip install djangorestframework
+```
+# Setup DB
+```
 python manage.py migrations
-
+python manage.py migrate
+python manage.py runserver
+```
 # API Documentaion
 
 ## Add User API
