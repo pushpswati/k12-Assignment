@@ -29,18 +29,18 @@ class Login(APIView):
       def post(self,request, format=None):
           print("Checkpoint 1")
           serializer = StudentEnrollSerializer(data=request.data)
-         
+          username = request.data['username']
+          print("Checkpoint 2 l",username)
           password = request.data['password']
           print("Checkpoint 3 password==",password)
 
           # Write your code for check email sssst in db
           try:
+              user = StudentEnroll.objects.get(username=username)
               
-              user = Post.objects.get(password=' ')
-              print(user)
               if user is not None:
-                  if user.password==password:
-                      print("Login successfull: ",)
+                  if (user.password==password):
+                      print("Student Registration successfull: ",)
 
                       #token
 
@@ -48,14 +48,12 @@ class Login(APIView):
                   else:
                       return Response({"sucess":"false","message":"Login not successfull"}, status=status.HTTP_400_BAD_REQUEST)
 
+              else:
+                  return Response({"sucess":"false","message":"Login not successfull"}, status=status.HTTP_400_BAD_REQUEST)
+
           except:
-                  return Response({"sucess":"false","message":"Login password not successfull"}, status=status.HTTP_400_BAD_REQUEST)
+              return Response({"sucess":"false","message":"Mail does not exist"}, status=status.HTTP_400_BAD_REQUEST)
 
-          
-              
-
-
-  
 
 
 
