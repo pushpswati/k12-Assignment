@@ -17,7 +17,8 @@ http://0.0.0.0:8001/adduser
 ```
 payload={"username":"",
     "password":"",
-    "email":""}
+    "email":"",
+    "course_id":3}
 ```
 ## Add Course API
 http://0.0.0.0:8001/addcourse
