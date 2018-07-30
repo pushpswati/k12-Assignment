@@ -59,7 +59,7 @@ class AddUser(APIView):
 class UserList(APIView):
     """
     This view for add new course
-    Send username , paswwork and slected course for add new usre
+    Send username , password and slected course for add new usre
     """
 
     def get(self, request, format=None):
@@ -70,7 +70,7 @@ class UserList(APIView):
 class AddCourses(APIView):
     """
     This view for add new course
-    Send username , paswwork and slected course for add new usre
+    Send username , password and slected course for add new usre
     """
 
     def post(self, request, format=None):
@@ -83,7 +83,7 @@ class AddCourses(APIView):
 class CoursesList(APIView):
     """
     This view for add new course
-    Send username , paswwork and slected course for add new usre
+    Send username , password and slected course for add new usre
     """
 
     def get(self, request, format=None):
@@ -120,7 +120,7 @@ class Login(APIView):
                   return Response({"sucess":"false","message":"Login not successfull"}, status=status.HTTP_400_BAD_REQUEST)
 
           except:
-              return Response({"sucess":"false","message":"Mail does not exist"}, status=status.HTTP_400_BAD_REQUEST)
+              return Response({"sucess":"false","message":"username does not exist"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
