@@ -3,6 +3,7 @@ from django.db import models
 class StudentEnroll(models.Model):
       created = models.DateTimeField(auto_now_add=True)
       username = models.CharField(max_length=100, blank=True, default='')
+      useremial=models.EmailField(null=True,blank=True)
       password = models.CharField(max_length=10)
       
 
