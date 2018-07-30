@@ -4,7 +4,7 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
+import requests
 from rest_framework import generics,permissions
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
@@ -12,10 +12,9 @@ from django.contrib.auth.models import User
 class AddUser(APIView):
      """
      This view for add new User
-     Send username , paswwork and slected course for add new usre
+     Send username , password and slected course for add new usre
      """
      def post(self, request, format=None):
-         username = request.data['username']
          password = request.data['password']
          username = request.data['username']
          email = request.data['email']
@@ -40,7 +39,7 @@ class AddUser(APIView):
                  # Custom response dict
                  response_dict={"student_id":str(student_id),
                                 "course_id":str(course_id),
-                                "message":msg_response}
+                                "response":msg_response}
 
                  # Final rensponse to send
                  RESPONSE={"success":True,
@@ -59,7 +58,7 @@ class AddUser(APIView):
 class UserList(APIView):
     """
     This view for add new course
-    Send username , password and slected course for add new usre
+    Send username , password and slected course for add new user
     """
 
     def get(self, request, format=None):
@@ -70,7 +69,7 @@ class UserList(APIView):
 class AddCourses(APIView):
     """
     This view for add new course
-    Send username , password and slected course for add new usre
+    Send username , password and slected course for add new user
     """
 
     def post(self, request, format=None):
@@ -83,7 +82,7 @@ class AddCourses(APIView):
 class CoursesList(APIView):
     """
     This view for add new course
-    Send username , password and slected course for add new usre
+    Send username , password and slected course for add new user
     """
 
     def get(self, request, format=None):
